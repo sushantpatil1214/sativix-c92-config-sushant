@@ -59,7 +59,8 @@
         		],
         		"personAttributes": [
             		"class",
-            		"caste"
+                    "caste",
+                    "phoneNumber"
         		],
         		"additionalPatientIdentifiers": [
            			"National ID"
@@ -128,14 +129,107 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "General Dental Examination_Select Dentition":{
+                "required": true
+            },
+            "General Dental Examination_Caries_Select Quadrant_5to8":{
+                "required": true
+            },
+            "General Dental Examination_Caries_Select Quadrant_1to4":{
+                "required": true
+            },
+            "General Dental Examination_Pockets_Select Quadrant_5to8":{
+                "required": true
+            },
+            "General Dental Examination_Pockets_Select Quadrant_1to4":{
+                "required": true
+            },
+            "General Dental Examination(Adult)_Caries_Select Quadrant_1to4":{
+                "required": true
+            },
+            "General Dental Examination(Adult)_Pockets_Select Quadrant_1to4":{
+                "required": true
+            },
+            "General Dental Examination_Caries Section I":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Caries Section II":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Pockets Section I":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Pockets Section II":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Mobility Section I":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Mobility Section II":{
+                "allowAddMore": true
+            },
+            "General Dental Examination_Select tooth (5th quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (6th quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (7th quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (8th quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (1st quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (2nd quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (3rd quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select tooth (4th quadrant)":{
+                "multiSelect": true
+            },
+            
+            "General Dental Examination_Select Surface (Upper Anterior teeth)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select Surface (Lower Anterior teeth)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select Surface (Upper Posterior teeth)":{
+                "multiSelect": true
+            },
+            "General Dental Examination_Select Surface (Lower Posterior teeth)":{
+                "multiSelect": true
+            },
+            "General Dental Examination(Adult)_Select Quadrant_1to4":{
+                "required": true
+            },
+            "General Dental Examination(Adult)_Select tooth (1st quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination(Adult)_Select tooth (2nd quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination(Adult)_Select tooth (3rd quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination(Adult)_Select tooth (4th quadrant)":{
+                "multiSelect": true
+            },
+            "General Dental Examination(Adult)_Caries":{
+                "allowAddMore": true
+            },
+            "General Dental Examination(Adult)_Pockets":{
+                "allowAddMore": true
+            },
+            "General Dental Examination(Adult)_Mobility":{
+                "allowAddMore": true
+            },
             "defaults": {
-                "Number of living children": 1,
-                "Accepted Family Planning methods": [
-                    "Condoms",
-                    "Pills"
-                ],
-                "Pain management given": true,
-                "Safe Abortion, Remarks": "Remarks",
                 "Malaria, Death Date": "2015-12-01"
             }
         },

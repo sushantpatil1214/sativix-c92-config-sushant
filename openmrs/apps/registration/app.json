@@ -10,14 +10,6 @@
             {
                 "id": "org.bahmni.registration.patient.next",
                 "description": "After Bahmni Patient Registration, forward url configuration"
-            },
-            {
-                "id": "org.bahmni.registration.navigation",
-                "description": "Navigation within regsitration first and second page"
-            },
-            {
-                "id": "org.bahmni.registration.conceptSetGroup.observations",
-                "description": "Registration Second Page Forms"
             }
         ],
         "contextModel": [
@@ -29,18 +21,18 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
+                        
+                    ]
+                },
+                "hidden": {
+                    "attributes": [
+                        "primaryContact",
                         "distanceFromCenter",
                         "isUrban",
                         "cluster",
                         "RationCard",
                         "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
-                },
-                "hidden": {
-                    "attributes": [
-                        "primaryContact"
+                        "debt"
                     ]
                 },
                 "defaults":  {
@@ -49,8 +41,7 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": false
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
@@ -58,7 +49,7 @@
             },
 
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "defaultIdentifierPrefix": "BAH",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
@@ -69,19 +60,9 @@
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
-                {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                     "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
                 },
                 {
                     "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
@@ -91,7 +72,7 @@
             ],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
-                    "required": true,
+                    "required": false,
                     "label": "Fee"
                 },
                 "FHS": {
@@ -99,6 +80,9 @@
                 },
                 "defaults":{
                     "FHS": "Present"
+                },
+                "SELECT DOCTOR": {
+                    "dropdown": true
                 }
             },
             "fieldValidation" : {
@@ -107,19 +91,24 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
-            },
+                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"},
+                "phoneNumber" : {"pattern" : "^[0-9*#+()-]+$", "errorMessage" : "Please enter the person's phone number with numbers and special characters only"},
+                "emergencyContactNo" : {"pattern" : "^[0-9*#+()-]+$", "errorMessage" : "Please enter the person's contact number with numbers and special characters only"},
+                "emergencyContactName" : {"pattern" : "^[a-zA-Z.]+$", "errorMessage" : "Please enter persons name with alphabets and special characters only"}
+             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
+                "address": {},
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Phone Number",
+                      "placeholder": "Enter Phone Number",
+                      "fields": ["phoneNumber"]
+                  }
+            },
+             "patientSearchResults": {
+                 "personAttributes": {
+                    "fields": ["phoneNumber"]
                 }
             }
+           
         }
 }

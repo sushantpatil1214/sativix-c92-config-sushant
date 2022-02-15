@@ -4,6 +4,7 @@
         "extensionPoints": [],
         "config": {
             "paperSize": "A3",
+            "supportedFormats": ["csv","html","excel","pdf"],
             "enableReportQueue": true
         }
 }
